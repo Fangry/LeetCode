@@ -7,6 +7,7 @@ class Solution:
             if count == origLen:
                 return res.append(newPerm)
             for i in range(len(avail)):
+                # move onto next layer; generate avail without element at index i; add element at index i
                 dfs(count+1, avail[:i] + avail[i+1:], newPerm + [avail[i]])
 
         dfs(0, nums, [])
